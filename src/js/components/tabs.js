@@ -1,6 +1,9 @@
+const shortid = require('shortid'); 
+
 // Tabs Component Constructor
 export function Tabs(data) {
   this.data = data;
+  this.id = shortid.generate();
 
   // Set the current tab if not set
   let currentTabList = this.data.filter(item => item.current === true);
@@ -11,7 +14,7 @@ export function Tabs(data) {
 
 // Generates the HTML Markup for the tabs
 Tabs.prototype.generateTabsMarkup = function() {
-  let markup = `<div class="tabs-container">`;
+  let markup = `<div class="tabs-container" id="tabs-${this.id}">`;
 
   let tabAnchors = `<ul>`;
   let tabContents = ``;
