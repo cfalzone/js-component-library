@@ -7,7 +7,7 @@ Built with Parcel, SASS, etc.
 npm start
 ```
 
-## Production Build
+## Production Build:
 ```
 npm build
 ```
