@@ -43,3 +43,7 @@ const tabsEx2 = new Example("Tabs 2", tabs2.generateTabsMarkup());
 // Add the tabs examples to the page
 app.insertAdjacentHTML('beforeend', tabsEx1.generateExampleMarkup());
 app.insertAdjacentHTML('beforeend', tabsEx2.generateExampleMarkup());
+
+// Initialize the tab examples
+tabs1.init();
+tabs2.init();
