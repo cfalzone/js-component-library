@@ -60,7 +60,7 @@ Tabs.prototype.attachEvents = function() {
   this.tabElems.map(item => {
     item.addEventListener('click', handleTabClick.bind(this));
   });
-}
+};
 
 function handleTabClick(event) {
   event.preventDefault();

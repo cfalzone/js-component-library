@@ -1,8 +1,13 @@
-import { Tabs } from './components/tabs';
 import { Example } from './components/example';
+import { Tabs } from './components/tabs';
+import { Accordion } from './components/accordion';
 
 // Get the app Element
 const app = document.querySelector('#app');
+
+// ===============
+// Tabs
+// ===============
 
 // Create New Tab Examples
 const tabsData1 = [
@@ -47,3 +52,53 @@ app.insertAdjacentHTML('beforeend', tabsEx2.generateExampleMarkup());
 // Initialize the tab examples
 tabs1.init();
 tabs2.init();
+
+
+// ===============
+// Accordions
+// ===============
+
+
+// Create New Tab Examples
+const accData1 = [
+  {
+    title: 'Accordion One',
+    content: 'Accordion One Content: Veniam culpa nisi id ad incididunt laborum occaecat ad ea sit amet fugiat ea nostrud.'
+  },
+  {
+    title: 'Accordion Two',
+    content: 'Accordion Two Content: Commodo non aute magna consequat adipisicing laboris esse officia.'
+  },
+  {
+    title: 'Accordion Three',
+    content: 'Accordion Three Content: Et culpa eiusmod magna proident labore duis commodo mollit minim ut eu minim.'
+  },
+];
+const acc1 = new Accordion(accData1);
+const accEx1 = new Example("Accordion 1", acc1.generateAccordionMarkup());
+
+const accData2 = [
+  {
+    title: 'Accordion 1',
+    content: 'Accordion 1 Content: Incididunt nulla ut nisi incididunt magna.'
+  },
+  {
+    title: 'Accordion 2',
+    content: 'Accordion 2 Content: Enim pariatur aliqua ad est ut culpa est aliqua dolore tempor velit esse nisi.',
+    current: true
+  },
+  {
+    title: 'Accordion 3',
+    content: 'Accordion 3 Content: Magna nisi reprehenderit Lorem duis.'
+  },
+];
+const acc2 = new Accordion(accData2);
+const accEx2 = new Example("Accordion 2", acc2.generateAccordionMarkup());
+
+// Add the accordion examples to the page
+app.insertAdjacentHTML('beforeend', accEx1.generateExampleMarkup());
+app.insertAdjacentHTML('beforeend', accEx2.generateExampleMarkup());
+
+// Initialize the Aacordion examples
+acc1.init();
+acc2.init();
