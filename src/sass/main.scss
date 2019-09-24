@@ -1,0 +1,9 @@
+@import "fonts";
+@import "variables";
+@import "components";
+
+body {
+  font: normal $regular 16px $montserrat;
+  color: $black;
+  background-color: $white;
+}
