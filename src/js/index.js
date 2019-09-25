@@ -1,6 +1,7 @@
 import { Example } from './components/example';
 import { Tabs } from './components/tabs';
 import { Accordion } from './components/accordion';
+import { Modal } from './components/modal';
 
 // Get the app Element
 const app = document.querySelector('#app');
@@ -99,6 +100,24 @@ const accEx2 = new Example("Accordion 2", acc2.generateAccordionMarkup());
 app.insertAdjacentHTML('beforeend', accEx1.generateExampleMarkup());
 app.insertAdjacentHTML('beforeend', accEx2.generateExampleMarkup());
 
-// Initialize the Aacordion examples
+// Initialize the Accordion examples
 acc1.init();
 acc2.init();
+
+// ===============
+// Modals
+// ===============
+
+// Create New Modal Examples
+const modal1 = new Modal('Modal One', 'Modal One Content: Veniam ad cupidatat Lorem nostrud ullamco commodo reprehenderit ut ut.');
+const modalEx1 = new Example('Modal One', modal1.generateModalMarkup());
+const modal2 = new Modal('Modal Two', 'Modal Two Content: Laboris voluptate commodo officia minim voluptate exercitation ullamco anim nostrud deserunt ex laborum nisi.');
+const modalEx2 = new Example('Modal Two', modal2.generateModalMarkup());
+
+// Add the modal exmaples to the page
+app.insertAdjacentHTML('beforeend', modalEx1.generateExampleMarkup());
+app.insertAdjacentHTML('beforeend', modalEx2.generateExampleMarkup());
+
+// Initialize the Mocal examples
+modal1.init();
+modal2.init();
