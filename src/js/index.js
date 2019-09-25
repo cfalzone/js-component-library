@@ -121,3 +121,32 @@ app.insertAdjacentHTML('beforeend', modalEx2.generateExampleMarkup());
 // Initialize the Mocal examples
 modal1.init();
 modal2.init();
+
+// ===============
+// Nested Example
+// ===============
+
+const nestedTabs1 = new Tabs(tabsData1);
+const nestedTabs2 = new Tabs(tabsData2);
+const nestedAccData = [
+  {
+    title: 'Nested Accordion 1',
+    content: nestedTabs1.generateTabsMarkup()
+  },
+  {
+    title: 'Nested Accordion 2',
+    content: nestedTabs2.generateTabsMarkup()
+  }
+];
+const nestedAcc = new Accordion(nestedAccData);
+const nestedModal = new Modal('Nested Modal',
+  nestedAcc.generateAccordionMarkup()
+);
+const nextedExample = new Example('Nested Example', nestedModal.generateModalMarkup());
+
+app.insertAdjacentHTML('beforeend', nextedExample.generateExampleMarkup());
+
+nestedTabs1.init();
+nestedTabs2.init();
+nestedAcc.init();
+nestedModal.init();
